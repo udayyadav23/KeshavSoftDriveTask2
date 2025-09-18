@@ -1,0 +1,50 @@
+/* Maang Alumni Section Styling */
+.maang-alumni-section {
+  background: linear-gradient(90deg, #232526 0%, #414345 100%);
+  color: #fff;
+  padding: 60px 0 40px 0;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+.maang-alumni-section h2 {
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+.maang-alumni-section .row strong {
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+/* Ensure footer stays at the bottom */
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+footer {
+  margin-top: auto;
+}
+main {
+  margin-top: 100px;
+}
+/* Add this to fix hero section being overlapped by navbar */
+.hero-section {
+  margin-top: 80px; /* Adjust if your navbar is taller/shorter */
+}
+
+/* Make footer stick to bottom */
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+footer {
+  margin-top: auto;
+}
