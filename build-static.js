@@ -1,4 +1,4 @@
-// Node.js script to render Handlebars templates to static HTML in dist folder
+// Node.js script to render Handlebars templates to static HTML in doc folder
 const fs = require('fs');
 const path = require('path');
 const handlebars = require('handlebars');
@@ -22,9 +22,9 @@ function registerPartials(dir, prefix = '') {
 }
 
 const templatesDir = path.join(__dirname, 'src/templates');
-const distDir = path.join(__dirname, 'dist');
+const docDir = path.join(__dirname, 'doc');
 const assetsSrc = path.join(__dirname, 'src/assets');
-const assetsDest = path.join(distDir, 'assets');
+const assetsDest = path.join(docDir, 'assets');
 
 // Register all partials
 registerPartials(templatesDir);
@@ -36,8 +36,8 @@ const pages = [
   { template: 'contact.hbs', output: 'contact.html' }
 ];
 
-// Ensure dist directory exists
-if (!fs.existsSync(distDir)) fs.mkdirSync(distDir);
+// Ensure doc directory exists
+if (!fs.existsSync(docDir)) fs.mkdirSync(docDir);
 
 // Render each page
 pages.forEach(page => {
@@ -49,7 +49,7 @@ pages.forEach(page => {
     let pageName = page.output.replace('.html', '');
     if (pageName === 'index') pageName = 'home';
     const html = template({ page: pageName });
-    fs.writeFileSync(path.join(distDir, page.output), html, 'utf8');
+    fs.writeFileSync(path.join(docDir, page.output), html, 'utf8');
     console.log(`Rendered ${page.output}`);
   }
 });
@@ -69,5 +69,5 @@ function copyDir(src, dest) {
 }
 if (fs.existsSync(assetsSrc)) {
   copyDir(assetsSrc, assetsDest);
-  console.log('Assets copied to dist/assets');
+  console.log('Assets copied to doc/assets');
 }

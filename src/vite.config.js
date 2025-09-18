@@ -13,7 +13,7 @@ export default defineConfig({
 		})
 	],
 	build: {
-		outDir: 'dist',
+		outDir: 'doc',
 		rollupOptions: {
 			input: {
 				main: 'src/templates/index.hbs',
